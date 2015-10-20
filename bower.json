@@ -1,0 +1,27 @@
+{
+    "name": "site",
+    "description": "bower components for site.",
+    "dependencies": {
+        "jquery": "1.8.3",
+        "bootstrap": "~2.3",
+        "bootstrap-datetimepicker": "0.0.10",
+        "font-awesome": "3.2.1"
+    },
+    "overrides": {
+        "jquery": {
+            "ignore": ["*.json"]
+        },
+        "bootstrap": {
+            "ignore": [
+                "js/**", "img/**", "less/**", "docs/build/**",
+                "docs/examples/**", "docs/templates/**", "docs/*.html"
+            ]
+        },
+        "bootstrap-datetimepicker": {
+            "ignore": ["build/**", "test/**"]
+        },
+        "font-awesome": {
+            "ignore": ["css/**", "less/**", "scss/**", "src/**"]
+        }
+    }
+}
