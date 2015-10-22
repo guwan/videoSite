@@ -13,19 +13,19 @@ License: You must have a valid license purchased only from themeforest (the abov
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en">
+<html lang="zh-CN">
 <!--<![endif]-->
 
 <!-- Head BEGIN -->
 <head>
   <meta charset="utf-8">
-  <title>Metronic Frontend (with Top Bar)</title>
+  <title>聚艺文化</title>
 
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <meta content="Metronic Shop UI description" name="description">
-  <meta content="Metronic Shop UI keywords" name="keywords">
+  <meta content="聚艺文化 description" name="description">
+  <meta content="聚艺文化 keywords" name="keywords">
   <meta content="keenthemes" name="author">
 
   <meta property="og:site_name" content="-CUSTOMER VALUE-">
@@ -39,6 +39,7 @@ License: You must have a valid license purchased only from themeforest (the abov
 
   <!-- Fonts START -->
   <link href="../../assets/global/css/gfonts2.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/global/css/gfonts3.css" rel="stylesheet" type="text/css"><!--- fonts for slider on the index page -->  
   <!-- Fonts END -->
 
   <!-- Global styles START -->          
@@ -49,13 +50,14 @@ License: You must have a valid license purchased only from themeforest (the abov
   <!-- Page level plugin styles START -->
   <link href="../../assets/global/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet">
   <link href="../../assets/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.css" rel="stylesheet">
-  <link href="../../assets/global/plugins/slider-revolution-slider/rs-plugin/css/settings.css" rel="stylesheet">
+  <link href="../../assets/global/plugins/slider-layer-slider/css/layerslider.css" rel="stylesheet">
   <!-- Page level plugin styles END -->
 
   <!-- Theme styles START -->
   <link href="../../assets/global/css/components.css" rel="stylesheet">
   <link href="../../assets/frontend/layout/css/style.css" rel="stylesheet">
-  <link href="../../assets/frontend/pages/css/style-revolution-slider.css" rel="stylesheet"><!-- metronic revo slider styles -->
+  <link href="../../assets/frontend/pages/css/style-shop.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/frontend/pages/css/style-layer-slider.css" rel="stylesheet">
   <link href="../../assets/frontend/layout/css/style-responsive.css" rel="stylesheet">
   <link href="../../assets/frontend/layout/css/themes/red.css" rel="stylesheet" id="style-color">
   <link href="../../assets/frontend/layout/css/custom.css" rel="stylesheet">
@@ -64,13 +66,13 @@ License: You must have a valid license purchased only from themeforest (the abov
 <!-- Head END -->
 
 <!-- Body BEGIN -->
-<body class="corporate">
+<body class="ecommerce">
     <!-- BEGIN STYLE CUSTOMIZER -->
     <div class="color-panel hidden-sm">
       <div class="color-mode-icons icon-color"></div>
       <div class="color-mode-icons icon-color-close"></div>
       <div class="color-mode">
-        <p>THEME COLOR</p>
+        <p>主题颜色</p>
         <ul class="inline">
           <li class="color-red current color-default" data-style="red"></li>
           <li class="color-blue" data-style="blue"></li>
@@ -91,15 +93,35 @@ License: You must have a valid license purchased only from themeforest (the abov
                 <div class="col-md-6 col-sm-6 additional-shop-info">
                     <ul class="list-unstyled list-inline">
                         <li><i class="fa fa-phone"></i><span>+1 456 6717</span></li>
-                        <li><i class="fa fa-envelope-o"></i><span>info@keenthemes.com</span></li>
+                        <!-- BEGIN CURRENCIES -->
+                        <li class="shop-currencies">
+                            <a href="javascript:void(0);">€</a>
+                            <a href="javascript:void(0);">£</a>
+                            <a href="javascript:void(0);">$</a>
+                            <a href="javascript:void(0);" class="current">￥</a>
+                        </li>
+                        <!-- END CURRENCIES -->
+                        <!-- BEGIN LANGS -->
+                        <li class="langs-block">
+                            <a href="javascript:void(0);" class="current">中文</a>
+                            <div class="langs-block-others-wrapper"><div class="langs-block-others">
+                              <a href="javascript:void(0);">English</a>
+                              <a href="javascript:void(0);">French</a>
+                              <a href="javascript:void(0);">Germany</a>
+                              <a href="javascript:void(0);">Turkish</a>
+                            </div></div>
+                        </li>
+                        <!-- END LANGS -->
                     </ul>
                 </div>
                 <!-- END TOP BAR LEFT PART -->
                 <!-- BEGIN TOP BAR MENU -->
                 <div class="col-md-6 col-sm-6 additional-nav">
                     <ul class="list-unstyled list-inline pull-right">
-                        <li><a href="page-login.html">Log In</a></li>
-                        <li><a href="page-reg-page.html">Registration</a></li>
+                        <li><a href="shop-account.html">我的账号</a></li>
+                        <li><a href="shop-wishlist.html">我的记录</a></li>
+                        <li><a href="shop-checkout.html">继续观看</a></li>
+                        <li><a href="page-login.html">登陆</a></li>
                     </ul>
                 </div>
                 <!-- END TOP BAR MENU -->
@@ -107,113 +129,128 @@ License: You must have a valid license purchased only from themeforest (the abov
         </div>        
     </div>
     <!-- END TOP BAR -->
+
     <!-- BEGIN HEADER -->
     <div class="header">
       <div class="container">
-        <a class="site-logo" href="index.html"><img src="../../assets/frontend/layout/img/logos/logo-corp-red.png" alt="Metronic FrontEnd"></a>
+        <a class="site-logo" href="shop-index.html"><img src="../../assets/frontend/layout/img/logos/logo-shop-red.png" alt="聚艺文化"></a>
 
         <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
 
+        <!-- BEGIN CART -->
+        <div class="top-cart-block">
+          <div class="top-cart-info">
+            <a href="javascript:void(0);" class="top-cart-info-count">8个计划</a>
+            <a href="javascript:void(0);" class="top-cart-info-value">时长：10小时</a>
+          </div>
+          <i class="fa fa-shopping-cart"></i>
+                        
+          <div class="top-cart-content-wrapper">
+            <div class="top-cart-content">
+              <ul class="scroller" style="height: 250px;">
+                <li>
+                  <a href="item.html"><img src="../../assets/frontend/pages/img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
+                  <span class="cart-content-count">x 1</span>
+                  <strong><a href="item.html">java入门教程</a></strong>
+                  <em> ￥1230</em>
+                  <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
+                </li>
+                <li>
+                  <a href="item.html"><img src="../../assets/frontend/pages/img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
+                  <span class="cart-content-count"> x 1</span>
+                  <strong><a href="item.html"> bootstrap入门教程</a></strong>
+                  <em>￥1230</em>
+                  <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
+                </li>
+                <li>
+                  <a href="item.html"><img src="../../assets/frontend/pages/img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
+                  <span class="cart-content-count">x 1</span>
+                  <strong><a href="item.html"> spring 源码解读</a></strong>
+                  <em>￥1230</em>
+                  <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
+                </li>
+                <li>
+                  <a href="item.html"><img src="../../assets/frontend/pages/img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
+                  <span class="cart-content-count">x 1</span>
+                  <strong><a href="item.html"> spring security 实战</a></strong>
+                  <em>￥1230</em>
+                  <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
+                </li>
+                <li>
+                  <a href="item.html"><img src="../../assets/frontend/pages/img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
+                  <span class="cart-content-count">x 1</span>
+                  <strong><a href="item.html"> spring 源码解读</a></strong>
+                  <em>￥1230</em>
+                  <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
+                </li>
+                <li>
+                  <a href="item.html"><img src="../../assets/frontend/pages/img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
+                  <span class="cart-content-count">x 1</span>
+                  <strong><a href="item.html"> spring 源码解读</a></strong>
+                  <em>￥1230</em>
+                  <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
+                </li>
+                <li>
+                  <a href="item.html"><img src="../../assets/frontend/pages/img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
+                  <span class="cart-content-count">x 1</span>
+                  <strong><a href="item.html"> spring 源码解读</a></strong>
+                  <em>￥1230</em>
+                  <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
+                </li>
+                <li>
+                  <a href="item.html"><img src="../../assets/frontend/pages/img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
+                  <span class="cart-content-count">x 1</span>
+                  <strong><a href="item.html"> spring 源码解读</a></strong>
+                  <em>￥1230</em>
+                  <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
+                </li>
+              </ul>
+              <div class="text-right">
+                <a href="shop-shopping-cart.html" class="btn btn-default">查看收藏</a>
+                <a href="shop-checkout.html" class="btn btn-primary">付费</a>
+              </div>
+            </div>
+          </div>            
+        </div>
+        <!--END CART -->
+
         <!-- BEGIN NAVIGATION -->
-        <div class="header-navigation pull-right font-transform-inherit">
+        <div class="header-navigation">
           <ul>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
-                Home 
+                视频 
                 
               </a>
                 
+              <!-- BEGIN DROPDOWN MENU -->
               <ul class="dropdown-menu">
-                <li class="active"><a href="index.html">Home Default</a></li>
-                <li><a href="index-header-fix.html">Home with Header Fixed</a></li>
-                <li><a href="index-without-topbar.html">Home without Top Bar</a></li>
-              </ul>
-            </li>
-           
-
-
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
-                Pages 
-                
-              </a>
-                
-              <ul class="dropdown-menu">
-                <li><a href="page-about.html">About Us</a></li>
-                <li><a href="page-services.html">Services</a></li>
-                <li><a href="page-prices.html">Prices</a></li>
-                <li><a href="page-faq.html">FAQ</a></li>
-                <li><a href="page-gallery.html">Gallery</a></li>
-                <li><a href="page-search-result.html">Search Result</a></li>
-                <li><a href="page-404.html">404</a></li>
-                <li><a href="page-500.html">500</a></li>
-                <li><a href="page-login.html">Login Page</a></li>
-                <li><a href="page-forgotton-password.html">Forget Password</a></li>
-                <li><a href="page-reg-page.html">Signup Page</a></li>
-                <li><a href="page-careers.html">Careers</a></li>
-                <li><a href="page-site-map.html">Site Map</a></li>
-                <li><a href="page-contacts.html">Contact</a></li>                
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
-                Features 
-                
-              </a>
-                
-              <ul class="dropdown-menu">
-                <li><a href="feature-typography.html">Typography</a></li>
-                <li><a href="feature-buttons.html">Buttons</a></li>
-                <li><a href="feature-forms.html">Forms</a></li>
-                
                 <li class="dropdown-submenu">
-                  <a href="index.html">Multi level <i class="fa fa-angle-right"></i></a>
+                  <a href="shop-product-list.html"> 最新视频<i class="fa fa-angle-right"></i></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="index.html">Second Level Link</a></li>
-                    <li><a href="index.html">Second Level Link</a></li>
+                    <li><a href="shop-product-list.html">凤姐讲营销</a></li>
+                    <li><a href="shop-product-list.html">二级分类</a></li>
                     <li class="dropdown-submenu">
                       <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
-                        Second Level Link 
+                        二级分类
                         <i class="fa fa-angle-right"></i>
                       </a>
                       <ul class="dropdown-menu">
-                        <li><a href="index.html">Third Level Link</a></li>
-                        <li><a href="index.html">Third Level Link</a></li>
-                        <li><a href="index.html">Third Level Link</a></li>
+                        <li><a href="shop-product-list.html">三级分类</a></li>
+                        <li><a href="shop-product-list.html">三级分类</a></li>
+                        <li><a href="shop-product-list.html">三级分类</a></li>
                       </ul>
                     </li>
                   </ul>
                 </li>
+                <li><a href="shop-product-list.html"> 最热视频</a></li>
+                <li><a href="shop-product-list.html"> 随便看看</a></li>
               </ul>
+              <!-- END DROPDOWN MENU -->
             </li>
-            <li class="dropdown">
+            <li class="dropdown dropdown-megamenu">
               <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
-                Portfolio 
-                
-              </a>
-                
-              <ul class="dropdown-menu">
-                <li><a href="portfolio-4.html">Portfolio 4</a></li>
-                <li><a href="portfolio-3.html">Portfolio 3</a></li>
-                <li><a href="portfolio-2.html">Portfolio 2</a></li>
-                <li><a href="portfolio-item.html">Portfolio Item</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
-                Blog 
-                
-              </a>
-                
-              <ul class="dropdown-menu">
-                <li><a href="blog.html">Blog Page</a></li>
-                <li><a href="blog-item.html">Blog Item</a></li>
-              </ul>
-            </li>
-
-             <li class="dropdown dropdown-megamenu">
-              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
-                Mega Menu
+                直播 
                 
               </a>
               <ul class="dropdown-menu">
@@ -223,52 +260,143 @@ License: You must have a valid license purchased only from themeforest (the abov
                       <div class="col-md-4 header-navigation-col">
                         <h4>Footwear</h4>
                         <ul>
-                          <li><a href="index.html">Astro Trainers</a></li>
-                          <li><a href="index.html">Basketball Shoes</a></li>
-                          <li><a href="index.html">Boots</a></li>
-                          <li><a href="index.html">Canvas Shoes</a></li>
-                          <li><a href="index.html">Football Boots</a></li>
-                          <li><a href="index.html">Golf Shoes</a></li>
-                          <li><a href="index.html">Hi Tops</a></li>
-                          <li><a href="index.html">Indoor Trainers</a></li>
+                          <li><a href="shop-product-list.html">Astro Trainers</a></li>
+                          <li><a href="shop-product-list.html">Basketball Shoes</a></li>
+                          <li><a href="shop-product-list.html">Boots</a></li>
+                          <li><a href="shop-product-list.html">Canvas Shoes</a></li>
+                          <li><a href="shop-product-list.html">Football Boots</a></li>
+                          <li><a href="shop-product-list.html">Golf Shoes</a></li>
+                          <li><a href="shop-product-list.html">Hi Tops</a></li>
+                          <li><a href="shop-product-list.html">Indoor and Court Trainers</a></li>
                         </ul>
                       </div>
                       <div class="col-md-4 header-navigation-col">
                         <h4>Clothing</h4>
                         <ul>
-                          <li><a href="index.html">Base Layer</a></li>
-                          <li><a href="index.html">Character</a></li>
-                          <li><a href="index.html">Chinos</a></li>
-                          <li><a href="index.html">Combats</a></li>
-                          <li><a href="index.html">Cricket Clothing</a></li>
-                          <li><a href="index.html">Fleeces</a></li>
-                          <li><a href="index.html">Gilets</a></li>
-                          <li><a href="index.html">Golf Tops</a></li>
+                          <li><a href="shop-product-list.html">Base Layer</a></li>
+                          <li><a href="shop-product-list.html">Character</a></li>
+                          <li><a href="shop-product-list.html">Chinos</a></li>
+                          <li><a href="shop-product-list.html">Combats</a></li>
+                          <li><a href="shop-product-list.html">Cricket Clothing</a></li>
+                          <li><a href="shop-product-list.html">Fleeces</a></li>
+                          <li><a href="shop-product-list.html">Gilets</a></li>
+                          <li><a href="shop-product-list.html">Golf Tops</a></li>
                         </ul>
                       </div>
                       <div class="col-md-4 header-navigation-col">
                         <h4>Accessories</h4>
                         <ul>
-                          <li><a href="index.html">Belts</a></li>
-                          <li><a href="index.html">Caps</a></li>
-                          <li><a href="index.html">Gloves</a></li>
+                          <li><a href="shop-product-list.html">Belts</a></li>
+                          <li><a href="shop-product-list.html">Caps</a></li>
+                          <li><a href="shop-product-list.html">Gloves, Hats and Scarves</a></li>
                         </ul>
 
                         <h4>Clearance</h4>
                         <ul>
-                          <li><a href="index.html">Jackets</a></li>
-                          <li><a href="index.html">Bottoms</a></li>
+                          <li><a href="shop-product-list.html">Jackets</a></li>
+                          <li><a href="shop-product-list.html">Bottoms</a></li>
+                        </ul>
+                      </div>
+                      <div class="col-md-12 nav-brands">
+                        <ul>
+                          <li><a href="shop-product-list.html"><img title="esprit" alt="esprit" src="../../assets/frontend/pages/img/brands/esprit.jpg"></a></li>
+                          <li><a href="shop-product-list.html"><img title="gap" alt="gap" src="../../assets/frontend/pages/img/brands/gap.jpg"></a></li>
+                          <li><a href="shop-product-list.html"><img title="next" alt="next" src="../../assets/frontend/pages/img/brands/next.jpg"></a></li>
+                          <li><a href="shop-product-list.html"><img title="puma" alt="puma" src="../../assets/frontend/pages/img/brands/puma.jpg"></a></li>
+                          <li><a href="shop-product-list.html"><img title="zara" alt="zara" src="../../assets/frontend/pages/img/brands/zara.jpg"></a></li>
                         </ul>
                       </div>
                     </div>
                   </div>
                 </li>
               </ul>
-            </li>   
-
-            <li><a href="shop-index.html" target="_blank">E-Commerce</a></li>
-            <li><a href="onepage-index.html" target="_blank">One Page</a></li>
-            <li><a href="http://keenthemes.com/preview/metronic/theme/templates/admin" target="_blank">Admin theme</a></li>
+            </li>
+            <li><a href="item.html">专辑</a></li>
+            <li class="dropdown dropdown100 nav-catalogue">
+              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+                最热 
+                
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <div class="header-navigation-content">
+                    <div class="row">
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="product-item">
+                          <div class="pi-img-wrapper">
+                            <a href="item.html"><img src="../../assets/frontend/pages/img/products/model4.jpg" class="img-responsive" alt="小学数学"></a>
+                          </div>
+                          <h3><a href="item.html">小学数学</a></h3>
+                          <div class="pi-price">热度: 1051031 </div>
+                          <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="product-item">
+                          <div class="pi-img-wrapper">
+                            <a href="item.html"><img src="../../assets/frontend/pages/img/products/model3.jpg" class="img-responsive" alt="小学数学"></a>
+                          </div>
+                          <h3><a href="item.html">小学数学</a></h3>
+                          <div class="pi-price">热度: 1051031 </div>
+                          <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="product-item">
+                          <div class="pi-img-wrapper">
+                            <a href="item.html"><img src="../../assets/frontend/pages/img/products/model7.jpg" class="img-responsive" alt="小学数学"></a>
+                          </div>
+                          <h3><a href="item.html">小学数学</a></h3>
+                          <div class="pi-price">热度: 1051031 </div>
+                          <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="product-item">
+                          <div class="pi-img-wrapper">
+                            <a href="item.html"><img src="../../assets/frontend/pages/img/products/model4.jpg" class="img-responsive" alt="小学数学"></a>
+                          </div>
+                          <h3><a href="item.html">小学数学</a></h3>
+                          <div class="pi-price">热度: 1051031 </div>
+                          <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
+                我的聚艺 
+                
+              </a>
+                
+              <ul class="dropdown-menu">
+                <li class="active"><a href="shop-index.html">Home Default</a></li>
+                <li><a href="shop-index-header-fix.html">Home Header Fixed</a></li>
+                <li><a href="shop-index-light-footer.html">Home Light Footer</a></li>
+                <li><a href="shop-product-list.html">Product List</a></li>
+                <li><a href="shop-search-result.html">Search Result</a></li>
+                <li><a href="item.html">Product Page</a></li>
+                <li><a href="shop-shopping-cart-null.html">Shopping Cart (Null Cart)</a></li>
+                <li><a href="shop-shopping-cart.html">Shopping Cart</a></li>
+                <li><a href="shop-checkout.html">Checkout</a></li>
+                <li><a href="shop-about.html">About</a></li>
+                <li><a href="shop-contacts.html">Contacts</a></li>
+                <li><a href="shop-account.html">My account</a></li>
+                <li><a href="shop-wishlist.html">My Wish List</a></li>
+                <li><a href="shop-goods-compare.html">Product Comparison</a></li>
+                <li><a href="shop-standart-forms.html">Standart Forms</a></li>
+                <li><a href="shop-faq.html">FAQ</a></li>
+                <li><a href="shop-privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="shop-terms-conditions-page.html">Terms &amp; Conditions</a></li>
+              </ul>
+            </li>
+            <li><a href="index.html" target="_blank">老师入驻 </a></li>
+            <li><a href="onepage-index.html" target="_blank">下载APP</a></li>
+            <li><a href="onepage-index.html" target="_blank">热门问题</a></li>
+            <!--<li><a href="http://keenthemes.com/preview/metronic/theme/templates/admin&amp;page=ecommerce_index.html" target="_blank">Admin theme</a></li>-->
 
             <!-- BEGIN TOP SEARCH -->
             <li class="menu-search">
@@ -277,9 +405,9 @@ License: You must have a valid license purchased only from themeforest (the abov
               <div class="search-box">
                 <form action="#">
                   <div class="input-group">
-                    <input type="text" placeholder="Search" class="form-control">
+                    <input type="text" placeholder="搜索" class="form-control">
                     <span class="input-group-btn">
-                      <button class="btn btn-primary" type="submit">Search</button>
+                      <button class="btn btn-primary" type="submit"> 搜索</button>
                     </span>
                   </div>
                 </form>
@@ -294,627 +422,869 @@ License: You must have a valid license purchased only from themeforest (the abov
     <!-- Header END -->
 
     <!-- BEGIN SLIDER -->
-    <div class="page-slider margin-bottom-40">
-      <div class="fullwidthbanner-container revolution-slider">
-        <div class="fullwidthabnner">
-          <ul id="revolutionul">
-            <!-- THE NEW SLIDE -->
-            <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="../../assets/frontend/pages/img/revolutionslider/thumbs/thumb2.jpg">
-              <!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
-              <img src="../../assets/frontend/pages/img/revolutionslider/bg9.jpg" alt="">
-              
-              <div class="caption lft slide_title_white slide_item_left"
-                data-x="30"
-                data-y="90"
-                data-speed="400"
-                data-start="1500"
-                data-easing="easeOutExpo">
-                Explore the Power<br><span class="slide_title_white_bold">of Metronic</span>
-              </div>
-              <div class="caption lft slide_subtitle_white slide_item_left"
-                data-x="87"
-                data-y="245"
-                data-speed="400"
-                data-start="2000"
-                data-easing="easeOutExpo">
-                This is what you were looking for
-              </div>
-              <a class="caption lft btn dark slide_btn slide_item_left" href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes"
-                data-x="187"
-                data-y="315"
-                data-speed="400"
-                data-start="3000"
-                data-easing="easeOutExpo">
-                Purchase Now!
-              </a>                        
-              <div class="caption lfb"
-                data-x="640" 
-                data-y="0" 
-                data-speed="700" 
-                data-start="1000" 
-                data-easing="easeOutExpo">
-                <img src="../../assets/frontend/pages/img/revolutionslider/lady.png" alt="Image 1">
-              </div>
-            </li>    
+    <div class="page-slider margin-bottom-35">
+      <!-- LayerSlider start -->
+      <div id="layerslider" style="width: 100%; height: 494px; margin: 0 auto;">
 
-            <!-- THE FIRST SLIDE -->
-            <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="../../assets/frontend/pages/img/revolutionslider/thumbs/thumb2.jpg">
-              <!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
-              <img src="../../assets/frontend/pages/img/revolutionslider/bg1.jpg" alt="">
-                            
-              <div class="caption lft slide_title slide_item_left"
-                data-x="30"
-                data-y="105"
-                data-speed="400"
-                data-start="1500"
-                data-easing="easeOutExpo">
-                Need a website design? 
-              </div>
-              <div class="caption lft slide_subtitle slide_item_left"
-                data-x="30"
-                data-y="180"
-                data-speed="400"
-                data-start="2000"
-                data-easing="easeOutExpo">
-                This is what you were looking for
-              </div>
-              <div class="caption lft slide_desc slide_item_left"
-                data-x="30"
-                data-y="220"
-                data-speed="400"
-                data-start="2500"
-                data-easing="easeOutExpo">
-                Lorem ipsum dolor sit amet, dolore eiusmod<br> quis tempor incididunt. Sed unde omnis iste.
-              </div>
-              <a class="caption lft btn green slide_btn slide_item_left" href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes"
-                data-x="30"
-                data-y="290"
-                data-speed="400"
-                data-start="3000"
-                data-easing="easeOutExpo">
-                Purchase Now!
-              </a>                        
-              <div class="caption lfb"
-                data-x="640" 
-                data-y="55" 
-                data-speed="700" 
-                data-start="1000" 
-                data-easing="easeOutExpo">
-                <img src="../../assets/frontend/pages/img/revolutionslider/man-winner.png" alt="Image 1">
-              </div>
-            </li>
+        <!-- slide one start -->
+        <div class="ls-slide ls-slide1" data-ls="offsetxin: right; slidedelay: 7000; transition2d: 24,25,27,28;">
 
-            <!-- THE SECOND SLIDE -->
-            <li data-transition="fade" data-slotamount="7" data-masterspeed="300" data-delay="9400" data-thumb="../../assets/frontend/pages/img/revolutionslider/thumbs/thumb2.jpg">                        
-              <img src="../../assets/frontend/pages/img/revolutionslider/bg2.jpg" alt="">
-              <div class="caption lfl slide_title slide_item_left"
-                data-x="30"
-                data-y="125"
-                data-speed="400"
-                data-start="3500"
-                data-easing="easeOutExpo">
-                Powerfull &amp; Clean
-              </div>
-              <div class="caption lfl slide_subtitle slide_item_left"
-                data-x="30"
-                data-y="200"
-                data-speed="400"
-                data-start="4000"
-                data-easing="easeOutExpo">
-                Responsive Admin &amp; Website Theme
-              </div>
-              <div class="caption lfl slide_desc slide_item_left"
-                data-x="30"
-                data-y="245"
-                data-speed="400"
-                data-start="4500"
-                data-easing="easeOutExpo">
-                Lorem ipsum dolor sit amet, consectetuer elit sed diam<br> nonummy amet euismod dolore.
-              </div>                        
-              <div class="caption lfr slide_item_right" 
-                data-x="635" 
-                data-y="105" 
-                data-speed="1200" 
-                data-start="1500" 
-                data-easing="easeOutBack">
-                <img src="../../assets/frontend/pages/img/revolutionslider/mac.png" alt="Image 1">
-              </div>
-              <div class="caption lfr slide_item_right" 
-                data-x="580" 
-                data-y="245" 
-                data-speed="1200" 
-                data-start="2000" 
-                data-easing="easeOutBack">
-                <img src="../../assets/frontend/pages/img/revolutionslider/ipad.png" alt="Image 1">
-              </div>
-              <div class="caption lfr slide_item_right" 
-                data-x="735" 
-                data-y="290" 
-                data-speed="1200" 
-                data-start="2500" 
-                data-easing="easeOutBack">
-                <img src="../../assets/frontend/pages/img/revolutionslider/iphone.png" alt="Image 1">
-              </div>
-              <div class="caption lfr slide_item_right" 
-                data-x="835" 
-                data-y="230" 
-                data-speed="1200" 
-                data-start="3000" 
-                data-easing="easeOutBack">
-                <img src="../../assets/frontend/pages/img/revolutionslider/macbook.png" alt="Image 1">
-              </div>
-              <div class="caption lft slide_item_right" 
-                data-x="865" 
-                data-y="45" 
-                data-speed="500" 
-                data-start="5000" 
-                data-easing="easeOutBack">
-                <img src="../../assets/frontend/pages/img/revolutionslider/hint1-red.png" id="rev-hint1" alt="Image 1">
-              </div>                        
-              <div class="caption lfb slide_item_right" 
-                data-x="355" 
-                data-y="355" 
-                data-speed="500" 
-                data-start="5500" 
-                data-easing="easeOutBack">
-                <img src="../../assets/frontend/pages/img/revolutionslider/hint2-red.png" id="rev-hint2" alt="Image 1">
-              </div>
-            </li>
-                        
-            <!-- THE THIRD SLIDE -->
-            <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="../../assets/frontend/pages/img/revolutionslider/thumbs/thumb2.jpg">
-              <img src="../../assets/frontend/pages/img/revolutionslider/bg3.jpg" alt="">
-              <div class="caption lfl slide_item_left" 
-                data-x="30" 
-                data-y="95" 
-                data-speed="400" 
-                data-start="1500" 
-                data-easing="easeOutBack">
-                <iframe src="http://player.vimeo.com/video/56974716?portrait=0" width="420" height="240" style="border:0" allowFullScreen></iframe> 
-              </div>
-              <div class="caption lfr slide_title"
-                data-x="470"
-                data-y="100"
-                data-speed="400"
-                data-start="2000"
-                data-easing="easeOutExpo">
-                Responsive Video Support
-              </div>
-              <div class="caption lfr slide_subtitle"
-                data-x="470"
-                data-y="170"
-                data-speed="400"
-                data-start="2500"
-                data-easing="easeOutExpo">
-                Youtube, Vimeo and others.
-              </div>
-              <div class="caption lfr slide_desc"
-                data-x="470"
-                data-y="220"
-                data-speed="400"
-                data-start="3000"
-                data-easing="easeOutExpo">
-                Lorem ipsum dolor sit amet, consectetuer elit sed diam<br> nonummy amet euismod dolore.
-              </div>
-              <a class="caption lfr btn yellow slide_btn" href=""
-                data-x="470"
-                data-y="280"
-                                 data-speed="400"
-                                 data-start="3500"
-                                 data-easing="easeOutExpo">
-                                 Watch more Videos!
-                            </a>
-                        </li>               
-                        
-                        <!-- THE FORTH SLIDE -->
-                        <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="../../assets/frontend/pages/img/revolutionslider/thumbs/thumb2.jpg">
-                            <!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
-                            <img src="../../assets/frontend/pages/img/revolutionslider/bg4.jpg" alt="">                        
-                             <div class="caption lft slide_title"
-                                 data-x="30"
-                                 data-y="105"
-                                 data-speed="400"
-                                 data-start="1500"
-                                 data-easing="easeOutExpo">
-                                 What else included ?
-                            </div>
-                            <div class="caption lft slide_subtitle"
-                                 data-x="30"
-                                 data-y="180"
-                                 data-speed="400"
-                                 data-start="2000"
-                                 data-easing="easeOutExpo">
-                                 The Most Complete Admin Theme
-                            </div>
-                            <div class="caption lft slide_desc"
-                                 data-x="30"
-                                 data-y="225"
-                                 data-speed="400"
-                                 data-start="2500"
-                                 data-easing="easeOutExpo">
-                                 Lorem ipsum dolor sit amet, consectetuer elit sed diam<br> nonummy amet euismod dolore.
-                            </div>
-                            <a class="caption lft slide_btn btn red slide_item_left" href="http://www.keenthemes.com/preview/index.php?theme=metronic_admin" target="_blank" 
-                                 data-x="30"
-                                 data-y="300"
-                                 data-speed="400"
-                                 data-start="3000"
-                                 data-easing="easeOutExpo">
-                                 Learn More!
-                            </a>                        
-                            <div class="caption lft start"  
-                                 data-x="670" 
-                                 data-y="55" 
-                                 data-speed="400" 
-                                 data-start="2000" 
-                                 data-easing="easeOutBack"  >
-                                 <img src="../../assets/frontend/pages/img/revolutionslider/iphone_left.png" alt="Image 2">
-                            </div>
-                            
-                            <div class="caption lft start"  
-                                 data-x="850" 
-                                 data-y="55" 
-                                 data-speed="400" 
-                                 data-start="2400" 
-                                 data-easing="easeOutBack"  >
-                                 <img src="../../assets/frontend/pages/img/revolutionslider/iphone_right.png" alt="Image 3">
-                            </div>                        
-                        </li>
-                </ul>
-                <div class="tp-bannertimer tp-bottom"></div>
-            </div>
+          <img src="../../assets/frontend/pages/img/layerslider/slide1/bg.jpg" class="ls-bg" alt="Slide background">
+
+          <div class="ls-l ls-title" style="top: 96px; left: 35%; white-space: nowrap;" data-ls="
+            fade: true; 
+            fadeout: true; 
+            durationin: 750; 
+            durationout: 750; 
+            easingin: easeOutQuint; 
+            rotatein: 90; 
+            rotateout: -90; 
+            scalein: .5; 
+            scaleout: .5; 
+            showuntil: 4000;
+          "> <strong>技术古玩</strong> 设计</div>
+
+          <div class="ls-l ls-mini-text" style="top: 338px; left: 35%; white-space: nowrap;" data-ls="
+          fade: true; 
+          fadeout: true; 
+          durationout: 750; 
+          easingin: easeOutQuint; 
+          delayin: 300; 
+          showuntil: 4000;
+          ">聚艺文化聚艺文化聚艺文化聚艺文化聚艺文化<br > 聚艺文化聚艺文化聚艺文化聚艺文化聚艺文化.
+          </div>
         </div>
+        <!-- slide one end -->
+
+        <!-- slide two start -->
+        <div class="ls-slide ls-slide2" data-ls="offsetxin: right; slidedelay: 7000; transition2d: 110,111,112,113;">
+
+          <img src="../../assets/frontend/pages/img/layerslider/slide2/bg.jpg" class="ls-bg" alt="Slide background">
+          
+          <div class="ls-l ls-title" style="top: 40%; left: 21%; white-space: nowrap;" data-ls="
+          fade: true; 
+          fadeout: true;  
+          durationin: 750; durationout: 109750; 
+          easingin: easeOutQuint; 
+          easingout: easeInOutQuint; 
+          delayin: 0; 
+          delayout: 0; 
+          rotatein: 90; 
+          rotateout: -90; 
+          scalein: .5; 
+          scaleout: .5; 
+          showuntil: 4000;
+          "><strong>聚艺文化</strong> 聚艺文化 <em>聚艺文化</em>
+            </div>
+
+          <div class="ls-l ls-price" style="top: 50%; left: 45%; white-space: nowrap;" data-ls="
+          fade: true; 
+          fadeout: true;  
+          durationout: 109750; 
+          easingin: easeOutQuint; 
+          delayin: 300; 
+          scalein: .8; 
+          scaleout: .8; 
+          showuntil: 4000;"><b>聚艺文化</b> <strong><span>￥</span>25</strong>
+          </div>
+
+          <a href="#" class="ls-l ls-more" style="top: 72%; left: 21%; display: inline-block; white-space: nowrap;" data-ls="
+          fade: true; 
+          fadeout: true; 
+          durationin: 750; 
+          durationout: 750; 
+          easingin: easeOutQuint; 
+          easingout: easeInOutQuint; 
+          delayin: 0; 
+          delayout: 0; 
+          rotatein: 90; 
+          rotateout: -90; 
+          scalein: .5; 
+          scaleout: .5; 
+          showuntil: 4000;">查看更多
+          </a>
+        </div>
+        <!-- slide two end -->
+
+        <!-- slide three start -->
+        <div class="ls-slide ls-slide3" data-ls="offsetxin: right; slidedelay: 7000; transition2d: 92,93,105;">
+
+          <img src="../../assets/frontend/pages/img/layerslider/slide3/bg.jpg" class="ls-bg" alt="Slide background">
+          
+          <div class="ls-l ls-title" style="top: 83px; left: 33%; white-space: nowrap;" data-ls="
+          fade: true; 
+          fadeout: true; 
+          durationin: 750; 
+          durationout: 750; 
+          easingin: easeOutQuint; 
+          rotatein: 90; 
+          rotateout: -90; 
+          scalein: .5; 
+          scaleout: .5; 
+          showuntil: 4000;
+          ">聚艺文化 &amp; 聚艺文化 <strong>聚艺文化</strong> 聚艺文化
+          </div>
+          <div class="ls-l" style="top: 333px; left: 33%; white-space: nowrap; font-size: 20px; font: 20px 'Open Sans Light', sans-serif;" data-ls="
+          fade: true; 
+          fadeout: true; 
+          durationout: 750; 
+          easingin: easeOutQuint; 
+          delayin: 300; 
+          scalein: .8; 
+          scaleout: .8; 
+          showuntil: 4000;
+          ">
+            <a href="#" class="ls-buy">
+              立即观看!
+            </a>
+            <div class="ls-price">
+              <span>聚艺文化:</span>
+              <strong>0<sup>￥</sup></strong>
+            </div>
+          </div>
+        </div>
+        <!-- slide three end -->
+
+        <!-- slide four start -->
+        <div class="ls-slide ls-slide4" data-ls="offsetxin: right; slidedelay: 7000; transition2d: 110,111,112,113;">
+
+          <img src="../../assets/frontend/pages/img/layerslider/slide5/bg.jpg" class="ls-bg" alt="Slide background">
+          
+          <div class="ls-l ls-title" style="top: 35%; left: 60%; white-space: nowrap;" data-ls="
+          fade: true; 
+          fadeout: true; 
+          durationin: 750; 
+          durationout: 750; 
+          easingin: easeOutQuint; 
+          rotatein: 90; 
+          rotateout: -90; 
+          scalein: .5; 
+          scaleout: .5; 
+          showuntil: 4000;">
+          The most<br>
+          wanted bijouterie
+          </div>
+
+          <div class="ls-l ls-mini-text" style="top: 70%; left: 60%; white-space: nowrap;" data-ls="
+          fade: true; 
+          fadeout: true;  
+          durationout: 750; 
+          easingin: easeOutQuint; 
+          delayin: 300; 
+          scalein: .8; 
+          scaleout: .8; 
+          showuntil: 4000;">
+          <span>聚艺文化</span>
+          <a href="#">聚艺文化!</a>
+          </div>
+
+        </div>
+        <!-- slide four end -->
+      </div>
+      <!-- LayerSlider end -->
     </div>
     <!-- END SLIDER -->
 
     <div class="main">
       <div class="container">
-        <!-- BEGIN SERVICE BOX -->   
-        <div class="row service-box margin-bottom-40">
-          <div class="col-md-4 col-sm-4">
-            <div class="service-box-heading">
-              <em><i class="fa fa-location-arrow blue"></i></em>
-              <span>Multipurpose Template</span>
+        <!-- BEGIN SALE PRODUCT & NEW ARRIVALS -->
+        <div class="row margin-bottom-40">
+          <!-- BEGIN SALE PRODUCT -->
+          <div class="col-md-12 sale-product">
+            <h2>新品速递</h2>
+            <div class="owl-carousel owl-carousel5">
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/model1.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/model1.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="item.html" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">精通java课程</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                  <div class="sticker sticker-sale"></div>
+                </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/model2.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/model2.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="item.html" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">精通java课程2</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/model6.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/model6.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">精通java课程3</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
+              <div>
+                  <div class="product-item">
+                    <div class="pi-img-wrapper">
+                      <img src="../../assets/frontend/pages/img/products/model4.jpg" class="img-responsive" alt="小学数学">
+                      <div>
+                        <a href="../../assets/frontend/pages/img/products/model4.jpg" class="btn btn-default fancybox-button">放大</a>
+                        <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                      </div>
+                    </div>
+                    <h3><a href="#">精通java课程4</a></h3>
+                    <div class="pi-price">热度: 1051031 </div>
+                    <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                    <div class="sticker sticker-new"></div>
+                  </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/model5.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/model5.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">精通java课程5</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/model3.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/model3.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">精通java课程3</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/model7.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/model7.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">精通java课程3</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
             </div>
-            <p>Lorem ipsum dolor sit amet, dolore eiusmod quis tempor incididunt ut et dolore Ut veniam unde nostrudlaboris. Sed unde omnis iste natus error sit voluptatem.</p>
           </div>
-          <div class="col-md-4 col-sm-4">
-            <div class="service-box-heading">
-              <em><i class="fa fa-check red"></i></em>
-              <span>Well Documented</span>
-            </div>
-            <p>Lorem ipsum dolor sit amet, dolore eiusmod quis tempor incididunt ut et dolore Ut veniam unde nostrudlaboris. Sed unde omnis iste natus error sit voluptatem.</p>
-          </div>
-          <div class="col-md-4 col-sm-4">
-            <div class="service-box-heading">
-              <em><i class="fa fa-compress green"></i></em>
-              <span>Responsive Design</span>
-            </div>
-            <p>Lorem ipsum dolor sit amet, dolore eiusmod quis tempor incididunt ut et dolore Ut veniam unde nostrudlaboris. Sed unde omnis iste natus error sit voluptatem.</p>
-          </div>
+          <!-- END SALE PRODUCT -->
         </div>
-        <!-- END SERVICE BOX -->
+        <!-- END SALE PRODUCT & NEW ARRIVALS -->
 
-        <!-- BEGIN BLOCKQUOTE BLOCK -->   
-        <div class="row quote-v1 margin-bottom-30">
-          <div class="col-md-9">
-            <span>Metronic - The Most Complete &amp; Popular Admin &amp; Frontend Theme</span>
-          </div>
-          <div class="col-md-3 text-right">
-            <a class="btn-transparent" href="http://www.keenthemes.com/preview/index.php?theme=metronic_admin" target="_blank"><i class="fa fa-rocket margin-right-10"></i>Preview Admin</a>
-          </div>
-        </div>
-        <!-- END BLOCKQUOTE BLOCK -->
-
-        <!-- BEGIN RECENT WORKS -->
-        <div class="row recent-work margin-bottom-40">
-          <div class="col-md-3">
-            <h2><a href="portfolio.html">Recent Works</a></h2>
-            <p>Lorem ipsum dolor sit amet, dolore eiusmod quis tempor incididunt ut et dolore Ut veniam unde voluptatem. Sed unde omnis iste natus error sit voluptatem.</p>
-          </div>
-          <div class="col-md-9">
-            <div class="owl-carousel owl-carousel3">
-              <div class="recent-work-item">
-                <em>
-                  <img src="../../assets/frontend/pages/img/works/img1.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="../../assets/frontend/pages/img/works/img1.jpg" class="fancybox-button" title="Project Name #1" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                  <strong>Amazing Project</strong>
-                  <b>Agenda corp.</b>
+        <!-- BEGIN SIDEBAR & CONTENT -->
+        <div class="row margin-bottom-40 ">
+          <!-- BEGIN SIDEBAR -->
+          <div class="sidebar col-md-3 col-sm-4">
+            <ul class="list-group margin-bottom-25 sidebar-menu">
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 文学</a></li>
+              <li class="list-group-item clearfix dropdown">
+                <a href="shop-product-list.html">
+                  <i class="fa fa-angle-right"></i>
+                  数学
+                  
                 </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="../../assets/frontend/pages/img/works/img2.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="../../assets/frontend/pages/img/works/img2.jpg" class="fancybox-button" title="Project Name #2" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                  <strong>Amazing Project</strong>
-                  <b>Agenda corp.</b>
-                </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="../../assets/frontend/pages/img/works/img3.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="../../assets/frontend/pages/img/works/img3.jpg" class="fancybox-button" title="Project Name #3" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                  <strong>Amazing Project</strong>
-                  <b>Agenda corp.</b>
-                </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="../../assets/frontend/pages/img/works/img4.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="../../assets/frontend/pages/img/works/img4.jpg" class="fancybox-button" title="Project Name #4" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                  <strong>Amazing Project</strong>
-                  <b>Agenda corp.</b>
-                </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="../../assets/frontend/pages/img/works/img5.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="../../assets/frontend/pages/img/works/img5.jpg" class="fancybox-button" title="Project Name #5" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                  <strong>Amazing Project</strong>
-                  <b>Agenda corp.</b>
-                </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="../../assets/frontend/pages/img/works/img6.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="../../assets/frontend/pages/img/works/img6.jpg" class="fancybox-button" title="Project Name #6" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                  <strong>Amazing Project</strong>
-                  <b>Agenda corp.</b>
-                </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="../../assets/frontend/pages/img/works/img3.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="../../assets/frontend/pages/img/works/img3.jpg" class="fancybox-button" title="Project Name #3" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                  <strong>Amazing Project</strong>
-                  <b>Agenda corp.</b>
-                </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="../../assets/frontend/pages/img/works/img4.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="../../assets/frontend/pages/img/works/img4.jpg" class="fancybox-button" title="Project Name #4" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                  <strong>Amazing Project</strong>
-                  <b>Agenda corp.</b>
-                </a>
-              </div>
-            </div>       
-          </div>
-        </div>   
-        <!-- END RECENT WORKS -->
-
-        <!-- BEGIN TABS AND TESTIMONIALS -->
-        <div class="row mix-block margin-bottom-40">
-          <!-- TABS -->
-          <div class="col-md-7 tab-style-1">
-            <ul class="nav nav-tabs">
-              <li class="active"><a href="#tab-1" data-toggle="tab">Multipurpose</a></li>
-              <li><a href="#tab-2" data-toggle="tab">Documented</a></li>
-              <li><a href="#tab-3" data-toggle="tab">Responsive</a></li>
-              <li><a href="#tab-4" data-toggle="tab">Clean & Fresh</a></li>
+                <ul class="dropdown-menu">
+                  <li class="list-group-item dropdown clearfix">
+                    <a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 小学 </a>
+                      <ul class="dropdown-menu">
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 科目1 </a>
+                          <ul class="dropdown-menu">
+                            <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 科目 1</a></li>
+                            <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 科目 2</a></li>
+                          </ul>
+                        </li>
+                        <li class="list-group-item dropdown clearfix">
+                          <a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 课外  </a>
+                          <ul class="dropdown-menu">
+                            <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 奥数</a></li>
+                            <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 趣味数学</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                  </li>
+                  <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 初中</a></li>
+                  <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 高中</a></li>
+                  <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 大学</a></li>
+                  <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 高等研究</a></li>
+                </ul>
+              </li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 哲学</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 语言</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 社会</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 历史</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 商业</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 传媒</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 医学 & 健康</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 美术 & 建筑</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 工程技术</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 法律 & 政治</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 宗教</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 心理学</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 教学 & 学习</a></li>
+              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> 学校 & 机构</a></li>
             </ul>
-            <div class="tab-content">
-              <div class="tab-pane row fade in active" id="tab-1">
-                <div class="col-md-3 col-sm-3">
-                  <a href="assets/temp/photos/img7.jpg" class="fancybox-button" title="Image Title" data-rel="fancybox-button">
-                    <img class="img-responsive" src="../../assets/frontend/pages/img/photos/img7.jpg" alt="">
-                  </a>
-                </div>
-                <div class="col-md-9 col-sm-9">
-                  <p class="margin-bottom-10">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Cosby sweater eu banh mi, qui irure terry richardson ex squid Aliquip placeat salvia cillum iphone.</p>
-                  <p><a class="more" href="#">Read more <i class="icon-angle-right"></i></a></p>
-                </div>
-              </div>
-              <div class="tab-pane row fade" id="tab-2">
-                <div class="col-md-9 col-sm-9">
-                  <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia..</p>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                  <a href="assets/temp/photos/img10.jpg" class="fancybox-button" title="Image Title" data-rel="fancybox-button">
-                    <img class="img-responsive" src="../../assets/frontend/pages/img/photos/img10.jpg" alt="">
-                  </a>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="tab-3">
-                <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-              </div>
-              <div class="tab-pane fade" id="tab-4">
-                <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
-              </div>
-            </div>
           </div>
-          <!-- END TABS -->
-        
-          <!-- TESTIMONIALS -->
-          <div class="col-md-5 testimonials-v1">
-            <div id="myCarousel" class="carousel slide">
-              <!-- Carousel items -->
-              <div class="carousel-inner">
-                <div class="active item">
-                  <blockquote><p>Denim you probably haven't heard of. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</p></blockquote>
-                  <div class="carousel-info">
-                    <img class="pull-left" src="../../assets/frontend/pages/img/people/img1-small.jpg" alt="">
-                    <div class="pull-left">
-                      <span class="testimonials-name">Lina Mars</span>
-                      <span class="testimonials-post">Commercial Director</span>
+          <!-- END SIDEBAR -->
+          <!-- BEGIN CONTENT -->
+          <div class="col-md-9 col-sm-8">
+            <h2> 热门教程</h2>
+            <div class="owl-carousel owl-carousel3">
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/k1.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/k1.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
                     </div>
                   </div>
-                </div>
-                <div class="item">
-                  <blockquote><p>Raw denim you Mustache cliche tempor, williamsburg carles vegan helvetica probably haven't heard of them jean shorts austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</p></blockquote>
-                  <div class="carousel-info">
-                    <img class="pull-left" src="../../assets/frontend/pages/img/people/img5-small.jpg" alt="">
-                    <div class="pull-left">
-                      <span class="testimonials-name">Kate Ford</span>
-                      <span class="testimonials-post">Commercial Director</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <blockquote><p>Reprehenderit butcher stache cliche tempor, williamsburg carles vegan helvetica.retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid Aliquip placeat salvia cillum iphone.</p></blockquote>
-                  <div class="carousel-info">
-                    <img class="pull-left" src="../../assets/frontend/pages/img/people/img2-small.jpg" alt="">
-                    <div class="pull-left">
-                      <span class="testimonials-name">Jake Witson</span>
-                      <span class="testimonials-post">Commercial Director</span>
-                    </div>
-                  </div>
+                  <h3><a href="item.html">小学数学</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                  <div class="sticker sticker-new"></div>
                 </div>
               </div>
-
-              <!-- Carousel nav -->
-              <a class="left-btn" href="#myCarousel" data-slide="prev"></a>
-              <a class="right-btn" href="#myCarousel" data-slide="next"></a>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/k2.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/k2.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">小学数学2</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/k3.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/k3.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">小学数学3</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/k4.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/k4.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">小学数学4</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                  <div class="sticker sticker-sale"></div>
+                </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/k1.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/k1.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">小学数学5</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/k2.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/k2.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">小学数学6</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
             </div>
           </div>
-          <!-- END TESTIMONIALS -->
-        </div>                
-        <!-- END TABS AND TESTIMONIALS -->
-
-        <!-- BEGIN STEPS -->
-        <div class="row margin-bottom-40 front-steps-wrapper front-steps-count-3">
-          <div class="col-md-4 col-sm-4 front-step-col">
-            <div class="front-step front-step1">
-              <h2>Goal definition</h2>
-              <p>Lorem ipsum dolor sit amet sit consectetur adipisicing eiusmod tempor.</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4 front-step-col">
-            <div class="front-step front-step2">
-              <h2>Analyse</h2>
-              <p>Lorem ipsum dolor sit amet sit consectetur adipisicing eiusmod tempor.</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4 front-step-col">
-            <div class="front-step front-step3">
-              <h2>Implementation</h2>
-              <p>Lorem ipsum dolor sit amet sit consectetur adipisicing eiusmod tempor.</p>
-            </div>
-          </div>
+          <!-- END CONTENT -->
         </div>
-        <!-- END STEPS -->
+        <!-- END SIDEBAR & CONTENT -->
 
-        <!-- BEGIN CLIENTS -->
-        <div class="row margin-bottom-40 our-clients">
-          <div class="col-md-3">
-            <h2><a href="#">Our Clients</a></h2>
-            <p>Lorem dipsum folor margade sitede lametep eiusmod psumquis dolore.</p>
-          </div>
-          <div class="col-md-9">
-            <div class="owl-carousel owl-carousel6-brands">
-              <div class="client-item">
-                <a href="#">
-                  <img src="../../assets/frontend/pages/img/clients/client_1_gray.png" class="img-responsive" alt="">
-                  <img src="../../assets/frontend/pages/img/clients/client_1.png" class="color-img img-responsive" alt="">
-                </a>
+		<!-- BEGIN SALE PRODUCT & NEW ARRIVALS -->
+        <div class="row margin-bottom-40">
+          <!-- BEGIN SALE PRODUCT -->
+          <div class="col-md-12 sale-product">
+            <h2>小编推荐</h2>
+            <div class="owl-carousel owl-carousel5">
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/model1.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/model1.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">精通java课程</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                  <div class="sticker sticker-sale"></div>
+                </div>
               </div>
-              <div class="client-item">
-                <a href="#">
-                  <img src="../../assets/frontend/pages/img/clients/client_2_gray.png" class="img-responsive" alt="">
-                  <img src="../../assets/frontend/pages/img/clients/client_2.png" class="color-img img-responsive" alt="">
-                </a>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/model2.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/model2.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">精通java课程2</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
               </div>
-              <div class="client-item">
-                <a href="#">
-                  <img src="../../assets/frontend/pages/img/clients/client_3_gray.png" class="img-responsive" alt="">
-                  <img src="../../assets/frontend/pages/img/clients/client_3.png" class="color-img img-responsive" alt="">
-                </a>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/model6.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/model6.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">精通java课程3</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
               </div>
-              <div class="client-item">
-                <a href="#">
-                  <img src="../../assets/frontend/pages/img/clients/client_4_gray.png" class="img-responsive" alt="">
-                  <img src="../../assets/frontend/pages/img/clients/client_4.png" class="color-img img-responsive" alt="">
-                </a>
+              <div>
+                  <div class="product-item">
+                    <div class="pi-img-wrapper">
+                      <img src="../../assets/frontend/pages/img/products/model4.jpg" class="img-responsive" alt="小学数学">
+                      <div>
+                        <a href="../../assets/frontend/pages/img/products/model4.jpg" class="btn btn-default fancybox-button">放大</a>
+                        <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                      </div>
+                    </div>
+                    <h3><a href="#">精通java课程4</a></h3>
+                    <div class="pi-price">热度: 1051031 </div>
+                    <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                    <div class="sticker sticker-new"></div>
+                  </div>
               </div>
-              <div class="client-item">
-                <a href="#">
-                  <img src="../../assets/frontend/pages/img/clients/client_5_gray.png" class="img-responsive" alt="">
-                  <img src="../../assets/frontend/pages/img/clients/client_5.png" class="color-img img-responsive" alt="">
-                </a>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/model5.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/model5.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">精通java课程5</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
               </div>
-              <div class="client-item">
-                <a href="#">
-                  <img src="../../assets/frontend/pages/img/clients/client_6_gray.png" class="img-responsive" alt="">
-                  <img src="../../assets/frontend/pages/img/clients/client_6.png" class="color-img img-responsive" alt="">
-                </a>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/model3.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/model3.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">精通java课程3</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
               </div>
-              <div class="client-item">
-                <a href="#">
-                  <img src="../../assets/frontend/pages/img/clients/client_7_gray.png" class="img-responsive" alt="">
-                  <img src="../../assets/frontend/pages/img/clients/client_7.png" class="color-img img-responsive" alt="">
-                </a>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/model7.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/model7.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">精通java课程3</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
               </div>
-              <div class="client-item">
-                <a href="#">
-                  <img src="../../assets/frontend/pages/img/clients/client_8_gray.png" class="img-responsive" alt="">
-                  <img src="../../assets/frontend/pages/img/clients/client_8.png" class="color-img img-responsive" alt="">
-                </a>
-              </div>                  
             </div>
-          </div>          
+          </div>
+          <!-- END SALE PRODUCT -->
         </div>
-        <!-- END CLIENTS -->
+        <!-- END SALE PRODUCT & NEW ARRIVALS -->
+
+		<!-- BEGIN SALE PRODUCT & NEW ARRIVALS -->
+        <div class="row margin-bottom-40">
+          <!-- BEGIN SALE PRODUCT -->
+          <div class="col-md-12 sale-product">
+            <h2>猜你喜欢</h2>
+            <div class="owl-carousel owl-carousel5">
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/model1.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/model1.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">精通java课程</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                  <div class="sticker sticker-sale"></div>
+                </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/model2.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/model2.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">精通java课程2</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/model6.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/model6.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">精通java课程3</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
+              <div>
+                  <div class="product-item">
+                    <div class="pi-img-wrapper">
+                      <img src="../../assets/frontend/pages/img/products/model4.jpg" class="img-responsive" alt="小学数学">
+                      <div>
+                        <a href="../../assets/frontend/pages/img/products/model4.jpg" class="btn btn-default fancybox-button">放大</a>
+                        <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                      </div>
+                    </div>
+                    <h3><a href="#">精通java课程4</a></h3>
+                    <div class="pi-price">热度: 1051031 </div>
+                    <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                    <div class="sticker sticker-new"></div>
+                  </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/model5.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/model5.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">精通java课程5</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/model3.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/model3.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">精通java课程3</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/model7.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/model7.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">精通java课程3</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END SALE PRODUCT -->
+        </div>
+        <!-- END SALE PRODUCT & NEW ARRIVALS -->
+
+        <!-- BEGIN TWO PRODUCTS & PROMO -->
+        <div class="row margin-bottom-35 ">
+          <!-- BEGIN TWO PRODUCTS -->
+          <div class="col-md-6 two-items-bottom-items">
+            <h2> 热门直播</h2>
+            <div class="owl-carousel owl-carousel2">
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/k4.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/k4.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">小学数学</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/k2.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/k2.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">小学数学</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/k3.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/k3.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">小学数学</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/k1.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/k1.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">小学数学</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/k4.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/k4.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">小学数学</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
+              <div>
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="../../assets/frontend/pages/img/products/k3.jpg" class="img-responsive" alt="小学数学">
+                    <div>
+                      <a href="../../assets/frontend/pages/img/products/k3.jpg" class="btn btn-default fancybox-button">放大</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">查看</a>
+                    </div>
+                  </div>
+                  <h3><a href="item.html">小学数学</a></h3>
+                  <div class="pi-price">热度: 1051031 </div>
+                  <a href="#" class="btn btn-default add2cart">加入收藏</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END TWO PRODUCTS -->
+          <!-- BEGIN PROMO -->
+          <div class="col-md-6 shop-index-carousel">
+            <div class="content-slider">
+              <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <img src="../../assets/frontend/pages/img/index-sliders/slide1.jpg" class="img-responsive" alt="小学数学">
+                  </div>
+                  <div class="item">
+                    <img src="../../assets/frontend/pages/img/index-sliders/slide2.jpg" class="img-responsive" alt="小学数学">
+                  </div>
+                  <div class="item">
+                    <img src="../../assets/frontend/pages/img/index-sliders/slide3.jpg" class="img-responsive" alt="小学数学">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END PROMO -->
+        </div>        
+        <!-- END TWO PRODUCTS & PROMO -->
       </div>
     </div>
+
+    <!-- BEGIN BRANDS -->
+    <div class="brands">
+      <div class="container">
+            <div class="owl-carousel owl-carousel6-brands">
+              <a href="shop-product-list.html"><img src="../../assets/frontend/pages/img/brands/canon.jpg" alt="canon" title="canon"></a>
+              <a href="shop-product-list.html"><img src="../../assets/frontend/pages/img/brands/esprit.jpg" alt="esprit" title="esprit"></a>
+              <a href="shop-product-list.html"><img src="../../assets/frontend/pages/img/brands/gap.jpg" alt="gap" title="gap"></a>
+              <a href="shop-product-list.html"><img src="../../assets/frontend/pages/img/brands/next.jpg" alt="next" title="next"></a>
+              <a href="shop-product-list.html"><img src="../../assets/frontend/pages/img/brands/puma.jpg" alt="puma" title="puma"></a>
+              <a href="shop-product-list.html"><img src="../../assets/frontend/pages/img/brands/zara.jpg" alt="zara" title="zara"></a>
+              <a href="shop-product-list.html"><img src="../../assets/frontend/pages/img/brands/canon.jpg" alt="canon" title="canon"></a>
+              <a href="shop-product-list.html"><img src="../../assets/frontend/pages/img/brands/esprit.jpg" alt="esprit" title="esprit"></a>
+              <a href="shop-product-list.html"><img src="../../assets/frontend/pages/img/brands/gap.jpg" alt="gap" title="gap"></a>
+              <a href="shop-product-list.html"><img src="../../assets/frontend/pages/img/brands/next.jpg" alt="next" title="next"></a>
+              <a href="shop-product-list.html"><img src="../../assets/frontend/pages/img/brands/puma.jpg" alt="puma" title="puma"></a>
+              <a href="shop-product-list.html"><img src="../../assets/frontend/pages/img/brands/zara.jpg" alt="zara" title="zara"></a>
+            </div>
+        </div>
+    </div>
+    <!-- END BRANDS -->
+
+    <!-- BEGIN STEPS -->
+    <div class="steps-block steps-block-red">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 steps-block-col">
+            <i class="fa fa-truck"></i>
+            <div>
+              <h2>师资雄厚</h2>
+              <em>拥有超过10000000000000万个在线教师</em>
+            </div>
+            <span>&nbsp;</span>
+          </div>
+          <div class="col-md-4 steps-block-col">
+            <i class="fa fa-gift"></i>
+            <div>
+              <h2>生源广泛</h2>
+              <em>拥有各行各业的学生，可以交流共鸣</em>
+            </div>
+            <span>&nbsp;</span>
+          </div>
+          <div class="col-md-4 steps-block-col">
+            <i class="fa fa-phone"></i>
+            <div>
+              <h2>477 505 8877</h2>
+              <em>24/7 全天候解答</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END STEPS -->
 
     <!-- BEGIN PRE-FOOTER -->
     <div class="pre-footer">
       <div class="container">
         <div class="row">
           <!-- BEGIN BOTTOM ABOUT BLOCK -->
-          <div class="col-md-4 col-sm-6 pre-footer-col">
+          <div class="col-md-3 col-sm-6 pre-footer-col">
             <h2>About us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit nonummy nibh euismod tincidunt ut laoreet dolore magna aliquarm erat sit volutpat.</p>
-
-            <div class="photo-stream">
-              <h2>Photos Stream</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"><img alt="" src="../../assets/frontend/pages/img/people/img5-small.jpg"></a></li>
-                <li><a href="#"><img alt="" src="../../assets/frontend/pages/img/works/img1.jpg"></a></li>
-                <li><a href="#"><img alt="" src="../../assets/frontend/pages/img/people/img4-large.jpg"></a></li>
-                <li><a href="#"><img alt="" src="../../assets/frontend/pages/img/works/img6.jpg"></a></li>
-                <li><a href="#"><img alt="" src="../../assets/frontend/pages/img/works/img3.jpg"></a></li>
-                <li><a href="#"><img alt="" src="../../assets/frontend/pages/img/people/img2-large.jpg"></a></li>
-                <li><a href="#"><img alt="" src="../../assets/frontend/pages/img/works/img2.jpg"></a></li>
-                <li><a href="#"><img alt="" src="../../assets/frontend/pages/img/works/img5.jpg"></a></li>
-                <li><a href="#"><img alt="" src="../../assets/frontend/pages/img/people/img5-small.jpg"></a></li>
-                <li><a href="#"><img alt="" src="../../assets/frontend/pages/img/works/img1.jpg"></a></li>
-                <li><a href="#"><img alt="" src="../../assets/frontend/pages/img/people/img4-large.jpg"></a></li>
-                <li><a href="#"><img alt="" src="../../assets/frontend/pages/img/works/img6.jpg"></a></li>
-                <li><a href="#"><img alt="" src="../../assets/frontend/pages/img/works/img3.jpg"></a></li>
-                <li><a href="#"><img alt="" src="../../assets/frontend/pages/img/people/img2-large.jpg"></a></li>
-                <li><a href="#"><img alt="" src="../../assets/frontend/pages/img/works/img2.jpg"></a></li>
-              </ul>                    
-            </div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit nonummy nibh euismod tincidunt ut laoreet dolore magna aliquarm erat sit volutpat. Nostrud exerci tation ullamcorper suscipit lobortis nisl aliquip  commodo consequat. </p>
+            <p>Duis autem vel eum iriure dolor vulputate velit esse molestie at dolore.</p>
           </div>
           <!-- END BOTTOM ABOUT BLOCK -->
+          <!-- BEGIN BOTTOM INFO BLOCK -->
+          <div class="col-md-3 col-sm-6 pre-footer-col">
+            <h2>Information</h2>
+            <ul class="list-unstyled">
+              <li><i class="fa fa-angle-right"></i> <a href="#">Delivery Information</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Customer Service</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Order Tracking</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Shipping &amp; Returns</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="contacts.html">Contact Us</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Careers</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Payment Methods</a></li>
+            </ul>
+          </div>
+          <!-- END INFO BLOCK -->
+
+          <!-- BEGIN TWITTER BLOCK --> 
+          <div class="col-md-3 col-sm-6 pre-footer-col">
+            <h2 class="margin-bottom-0">Latest Tweets</h2>
+            <a class="twitter-timeline" href="https://twitter.com/twitterapi" data-tweet-limit="2" data-theme="dark" data-link-color="#57C8EB" data-widget-id="455411516829736961" data-chrome="noheader nofooter noscrollbar noborders transparent">Loading tweets by @keenthemes...</a>      
+          </div>
+          <!-- END TWITTER BLOCK -->
 
           <!-- BEGIN BOTTOM CONTACTS -->
-          <div class="col-md-4 col-sm-6 pre-footer-col">
+          <div class="col-md-3 col-sm-6 pre-footer-col">
             <h2>Our Contacts</h2>
             <address class="margin-bottom-40">
               35, Lorem Lis Street, Park Ave<br>
@@ -924,10 +1294,29 @@ License: You must have a valid license purchased only from themeforest (the abov
               Email: <a href="mailto:info@metronic.com">info@metronic.com</a><br>
               Skype: <a href="skype:metronic">metronic</a>
             </address>
-
-            <div class="pre-footer-subscribe-box pre-footer-subscribe-box-vertical">
+          </div>
+          <!-- END BOTTOM CONTACTS -->
+        </div>
+        <hr>
+        <div class="row">
+          <!-- BEGIN SOCIAL ICONS -->
+          <div class="col-md-6 col-sm-6">
+            <ul class="social-icons">
+              <li><a class="rss" data-original-title="rss" href="#"></a></li>
+              <li><a class="facebook" data-original-title="facebook" href="#"></a></li>
+              <li><a class="twitter" data-original-title="twitter" href="#"></a></li>
+              <li><a class="googleplus" data-original-title="googleplus" href="#"></a></li>
+              <li><a class="linkedin" data-original-title="linkedin" href="#"></a></li>
+              <li><a class="youtube" data-original-title="youtube" href="#"></a></li>
+              <li><a class="vimeo" data-original-title="vimeo" href="#"></a></li>
+              <li><a class="skype" data-original-title="skype" href="#"></a></li>
+            </ul>
+          </div>
+          <!-- END SOCIAL ICONS -->
+          <!-- BEGIN NEWLETTER -->
+          <div class="col-md-6 col-sm-6">
+            <div class="pre-footer-subscribe-box pull-right">
               <h2>Newsletter</h2>
-              <p>Subscribe to our newsletter and stay up to date with the latest news and deals!</p>
               <form action="#">
                 <div class="input-group">
                   <input type="text" placeholder="youremail@mail.com" class="form-control">
@@ -936,16 +1325,9 @@ License: You must have a valid license purchased only from themeforest (the abov
                   </span>
                 </div>
               </form>
-            </div>
+            </div> 
           </div>
-          <!-- END BOTTOM CONTACTS -->
-
-          <!-- BEGIN TWITTER BLOCK --> 
-          <div class="col-md-4 col-sm-6 pre-footer-col">
-            <h2 class="margin-bottom-0">Latest Tweets</h2>
-            <a class="twitter-timeline" href="https://twitter.com/twitterapi" data-tweet-limit="2" data-theme="dark" data-link-color="#57C8EB" data-widget-id="455411516829736961" data-chrome="noheader nofooter noscrollbar noborders transparent">Loading tweets by @keenthemes...</a>
-          </div>
-          <!-- END TWITTER BLOCK -->
+          <!-- END NEWLETTER -->
         </div>
       </div>
     </div>
@@ -957,22 +1339,18 @@ License: You must have a valid license purchased only from themeforest (the abov
         <div class="row">
           <!-- BEGIN COPYRIGHT -->
           <div class="col-md-6 col-sm-6 padding-top-10">
-            2014 © Metronic Shop UI. ALL Rights Reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            2014 © 聚艺文化. ALL Rights Reserved. 
           </div>
           <!-- END COPYRIGHT -->
           <!-- BEGIN PAYMENTS -->
           <div class="col-md-6 col-sm-6">
-            <ul class="social-footer list-unstyled list-inline pull-right">
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-              <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-skype"></i></a></li>
-              <li><a href="#"><i class="fa fa-github"></i></a></li>
-              <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-              <li><a href="#"><i class="fa fa-dropbox"></i></a></li>
-            </ul>  
+            <ul class="list-unstyled list-inline pull-right">
+              <li><img src="../../assets/frontend/layout/img/payments/western-union.jpg" alt="We accept Western Union" title="We accept Western Union"></li>
+              <li><img src="../../assets/frontend/layout/img/payments/american-express.jpg" alt="We accept American Express" title="We accept American Express"></li>
+              <li><img src="../../assets/frontend/layout/img/payments/MasterCard.jpg" alt="We accept MasterCard" title="We accept MasterCard"></li>
+              <li><img src="../../assets/frontend/layout/img/payments/PayPal.jpg" alt="We accept PayPal" title="We accept PayPal"></li>
+              <li><img src="../../assets/frontend/layout/img/payments/visa.jpg" alt="We accept Visa" title="We accept Visa"></li>
+            </ul>
           </div>
           <!-- END PAYMENTS -->
         </div>
@@ -980,37 +1358,100 @@ License: You must have a valid license purchased only from themeforest (the abov
     </div>
     <!-- END FOOTER -->
 
+    <!-- BEGIN fast view of a product -->
+    <div id="product-pop-up" style="display: none; width: 700px;">
+            <div class="product-page product-pop-up">
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-3">
+                  <div class="product-main-image">
+                    <img src="../../assets/frontend/pages/img/products/model7.jpg" alt="Cool green dress with red bell" class="img-responsive">
+                  </div>
+                  <div class="product-other-images">
+                    <a href="#" class="active"><img alt="小学数学" src="../../assets/frontend/pages/img/products/model3.jpg"></a>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-9">
+                  <h2></h2>
+                  <div class="price-availability-block clearfix">
+                    <div class="price">
+                      <strong><span>￥</span>0</strong>
+                      <em>￥<span>62.00</span></em>
+                    </div>
+                    <div class="availability">
+                      是否可看: <strong>已上先</strong>
+                    </div>
+                  </div>
+                  <div class="description">
+                    <p> 聚艺文化聚艺文化聚艺文化聚艺文化聚艺文化聚艺文化聚艺文化聚艺文化聚艺文化聚艺文化聚艺文化聚艺文化聚艺文化
+                    	聚艺文化聚艺文化聚艺文化聚艺文化聚艺文化聚艺文化聚艺文化.</p>
+                  </div>
+                  <div class="product-page-options">
+                    <div class="pull-left">
+                      <label class="control-label">清晰度:</label>
+                      <select class="form-control input-sm">
+                        <option>1080P</option>
+                        <option>720P</option>
+                        <option>360P</option>
+                      </select>
+                    </div>
+                    <!-- <div class="pull-left">
+                      <label class="control-label">Color:</label>
+                      <select class="form-control input-sm">
+                        <option>Red</option>
+                        <option>Blue</option>
+                        <option>Black</option>
+                      </select>
+                    </div> -->
+                  </div>
+                  <div class="product-page-cart">
+                    <!--<div class="product-quantity">
+                        <input id="product-quantity" type="text" value="1" readonly name="product-quantity" class="form-control input-sm">
+                    </div> -->
+                    <button class="btn btn-primary" type="submit">加入收藏</button>
+                    <a href="item.html" class="btn btn-default">更多细节</a>
+                  </div>
+                </div>
+
+                <div class="sticker sticker-sale"></div>
+              </div>
+            </div>
+    </div>
+    <!-- END fast view of a product -->
+
     <!-- Load javascripts at bottom, this will reduce page load time -->
     <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
     <!--[if lt IE 9]>
-    <script src="../../assets/global/plugins/respond.min.js"></script>
-    <![endif]--> 
+    <script src="../../assets/global/plugins/respond.min.js"></script>  
+    <![endif]-->
     <script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
     <script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
     <script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>      
     <script src="../../assets/frontend/layout/scripts/back-to-top.js" type="text/javascript"></script>
+    <script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
     <!-- END CORE PLUGINS -->
 
     <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
     <script src="../../assets/global/plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script><!-- pop up -->
     <script src="../../assets/global/plugins/carousel-owl-carousel/owl-carousel/owl.carousel.min.js" type="text/javascript"></script><!-- slider for products -->
+    <script src='../../assets/global/plugins/zoom/jquery.zoom.min.js' type="text/javascript"></script><!-- product zoom -->
+    <script src="../../assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script><!-- Quantity -->
 
-    <!-- BEGIN RevolutionSlider -->
-  
-    <script src="../../assets/global/plugins/slider-revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js" type="text/javascript"></script> 
-    <script src="../../assets/global/plugins/slider-revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js" type="text/javascript"></script> 
-    <script src="../../assets/frontend/pages/scripts/revo-slider-init.js" type="text/javascript"></script>
-    <!-- END RevolutionSlider -->
+    <!-- BEGIN LayerSlider -->
+    <script src="../../assets/global/plugins/slider-layer-slider/js/greensock.js" type="text/javascript"></script><!-- External libraries: GreenSock -->
+    <script src="../../assets/global/plugins/slider-layer-slider/js/layerslider.transitions.js" type="text/javascript"></script><!-- LayerSlider script files -->
+    <script src="../../assets/global/plugins/slider-layer-slider/js/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script><!-- LayerSlider script files -->
+    <script src="../../assets/frontend/pages/scripts/layerslider-init.js" type="text/javascript"></script>
+    <!-- END LayerSlider -->
 
     <script src="../../assets/frontend/layout/scripts/layout.js" type="text/javascript"></script>
     <script type="text/javascript">
         jQuery(document).ready(function() {
             Layout.init();    
             Layout.initOWL();
-            RevosliderInit.initRevoSlider();
+            LayersliderInit.initLayerSlider();
+            Layout.initImageZoom();
+            Layout.initTouchspin();
             Layout.initTwitter();
-            //Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
-            //Layout.initNavScrolling(); 
         });
     </script>
     <!-- END PAGE LEVEL JAVASCRIPTS -->
