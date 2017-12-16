@@ -1,10 +1,11 @@
 /**
  * Created by dono on 2017/12/11.
  */
-for (var i=0;i<100;i++)
+for (var i=0;i<10000;i++)
 {
-    num = GetRandomNum(1,10);
-    setInterval(vote(),num * 1000);
+    vote();
+    //num = GetRandomNum(1,10);
+    //setInterval(vote(),num * 1000);
 }
 function vote(){
     sleep(num);
