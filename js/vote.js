@@ -1,8 +1,6 @@
 for (var i=0;i<100000;i++)
 {
     vote();
-    //num = GetRandomNum(1,10);
-    //setInterval(vote(),num * 1000);
 }
 function vote(){
     var num = GetRandomNum(1,100);
