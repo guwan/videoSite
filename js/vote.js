@@ -1,6 +1,7 @@
 for (var i=0;i<100000;i++)
 {
     vote();
+    console.log("the "+ i +" time to vote.")
 }
 function vote(){
     var num = GetRandomNum(1,100);
