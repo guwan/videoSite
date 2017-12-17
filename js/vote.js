@@ -1,13 +1,11 @@
-/**
- * Created by dono on 2017/12/11.
- */
-for (var i=0;i<10000;i++)
+for (var i=0;i<100000;i++)
 {
     vote();
     //num = GetRandomNum(1,10);
     //setInterval(vote(),num * 1000);
 }
 function vote(){
+    var num = GetRandomNum(1,100);
     sleep(num);
     clearCookie("U_VOTE");
     $.ajax({
