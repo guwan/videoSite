@@ -7,6 +7,10 @@ function vote(){
     var num = GetRandomNum(1,100);
     sleep(num);
     clearCookie("U_VOTE");
+    clearCookie("U_VOTE");
+    clearCookie("U_VOTE");
+    clearCookie("U_VOTE");
+    clearCookie("U_VOTE");
     $.ajax({
         type: "POST",
         url: "http://www.carjob.com.cn/best/mem/vote",
